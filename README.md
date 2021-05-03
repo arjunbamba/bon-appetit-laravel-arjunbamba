@@ -1,5 +1,5 @@
-# Bon Appe&#233;tit!
-##### Final Project for ITP 405
+# Bon App&#233;tit!
+#### Final Project for ITP 405
 
 **NAME**: Arjun Bamba
 
