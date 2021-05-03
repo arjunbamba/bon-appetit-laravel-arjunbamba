@@ -18,6 +18,7 @@
 
         {{-- <meta http-equiv="X-UA-Compatible" content="ie=edge"> --}}
         {{-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"> --}}
+        
         <title>Home | Bon Appe&#769tit</title>
 
         <link rel="stylesheet" type="text/css" href="{{ asset('css/HomeStyle.css') }}" />
@@ -29,7 +30,7 @@
         <span class="body">
             <div class="my_main" id="tab-main-vid">
               <video autoPlay loop muted controls class="main_video">
-                <source src="{{ asset('media/la_3.mp4') }}" type="video/mp4" />
+                <source src="{{ asset('media/food_intro1.mp4') }}" type="video/mp4" />
               </video>
               <div class="my_overlay my_caption1">
                 <p class="my_animated_para"><strong>Bon Appe&#769tit!</strong></p>
@@ -42,7 +43,7 @@
             <!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark"> --> 
             <nav class="navbar sticky-top navbar-expand-lg navbar-dark" style="background-color: black;">
 
-                <a class="navbar-brand" href="myhome.php#tab-main-vid"><b>Bon Appe&#769tit</b></a>
+                <a class="navbar-brand" href="{{ route('home.index') . '#tab-main-vid' }}"><b>Bon Appe&#769tit</b></a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -57,7 +58,6 @@
                             onmouseout="this.style.backgroundColor='black'; this.style.color='darkgray'" 
                             style="background-color: black; color: darkgray; transition: all 0.5s ease;" 
                             href="{{ route('home.index') . '#tab-main-vid' }}"
-                            {{-- href="myhome.php#tab-main-vid"  --}}
                             id="active-menu">
                                 Home<span class="sr-only">(current)</span>
                             </a>
@@ -69,7 +69,6 @@
                             onmouseout="this.style.backgroundColor='black'; this.style.color='darkgray'" 
                             style="background-color: black; color: darkgray; transition: all 0.5s ease;" 
                             href="{{ route('home.index') . '#tab-welcome' }}"
-                            {{-- href="myhome.php#tab-welcome" --}}
                             >
                                 Welcome
                             </a>
@@ -91,7 +90,6 @@
                                     onmouseout="this.style.backgroundColor='black'; this.style.color='darkgray'"
                                     style="background-color: black; color: darkgray; transition: all 0.5s ease;" 
                                     href="{{ route('home.index') . '#tab-aboutus' }}"
-                                    {{-- href="myhome.php#tab-aboutus" --}}
                                     > 
                                         Our Start
                                     </a>
@@ -102,8 +100,7 @@
                                     onmouseover="this.style.backgroundColor='white'; this.style.color='black'" 
                                     onmouseout="this.style.backgroundColor='black'; this.style.color='darkgray'"
                                     style="background-color: black; color: darkgray; transition: all 0.5s ease;" 
-                                    {{-- href="{{ route('aboutus.index') }}" --}}
-                                    {{-- href="aboutus.php" --}}
+                                    href="{{ route('aboutus.index') }}"
                                     > 
                                         Learn More
                                     </a>
@@ -127,7 +124,6 @@
                                     onmouseout="this.style.backgroundColor='black'; this.style.color='darkgray'"
                                     style="background-color: black; color: darkgray; transition: all 0.5s ease;" 
                                     href="{{ route('home.index') . '#tab-food' }}"
-                                    {{-- href="myhome.php#tab-food" --}}
                                     > 
                                         Adventure at Heart
                                     </a>
@@ -138,15 +134,24 @@
                                     onmouseover="this.style.backgroundColor='white'; this.style.color='black'" 
                                     onmouseout="this.style.backgroundColor='black'; this.style.color='darkgray'"
                                     style="background-color: black; color: darkgray; transition: all 0.5s ease;" 
-                                    {{-- href="{{ route('browse.index') }}" --}}
-                                    {{-- href="browse.php" --}}
+                                    href="{{ route('eloquent_recipe.index') }}"
                                     > 
                                         Browse
                                     </a>
-                                </li>            
+                                </li>
+                                
+                                <li>
+                                    <a class="dropdown-item" 
+                                    onmouseover="this.style.backgroundColor='white'; this.style.color='black'" 
+                                    onmouseout="this.style.backgroundColor='black'; this.style.color='darkgray'"
+                                    style="background-color: black; color: darkgray; transition: all 0.5s ease;" 
+                                    href="{{ route('eloquent_recipe.create') }}"
+                                    > 
+                                        Create Recipe
+                                    </a>
+                                </li>
                             </ul>
                         </li>
-                
                     </ul>
     
                     <ul class="navbar-nav ml-auto">
@@ -167,76 +172,65 @@
     
                             <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown" style="background-color: black">
     
-                                @if(!Auth::check())
-    
-                                <li>
-                                    <a class="dropdown-item" 
-                                    onmouseover="this.style.backgroundColor='white'; this.style.color='black'" 
-                                    onmouseout="this.style.backgroundColor='black'; this.style.color='darkgray'"
-                                    style="color: darkgray; transition: all 0.5s ease;" 
-                                    {{-- href="register_user.php" --}}
-                                    href="{{ route('registration.index') }}"> 
-                                        Register
-                                    </a>
-                                </li>
-                                <div class="dropdown-divider"></div>
-                                <li>
-                                    <a class="dropdown-item" 
-                                    onmouseover="this.style.backgroundColor='white'; this.style.color='black'" 
-                                    onmouseout="this.style.backgroundColor='black'; this.style.color='darkgray'"
-                                    style="color: darkgray; transition: all 0.5s ease;" 
-                                    {{-- href="login_user.php" --}}
-                                    href="{{ route('auth.loginForm') }}"> 
-                                        Login 
-                                    </a>
-                                </li>
-    
-                                @else
-    
-                                <li>
-                                    <a class="dropdown-item" 
-                                    onmouseover="this.style.backgroundColor='white'; this.style.color='black'" 
-                                    onmouseout="this.style.backgroundColor='black'; this.style.color='darkgray'"
-                                    style="color: darkgray; transition: all 0.5s ease;" 
-                                    {{-- href="update_pw.php" --}}
-                                    href="{{ route('profile.index') }}"> 
-                                        Profile
-                                    </a>
-                                </li>
-                                <div class="dropdown-divider"></div>
-                                <li>
-                                    {{--                                 
-                                    <a class="dropdown-item" 
-                                    onmouseover="this.style.backgroundColor='white'; this.style.color='black'" 
-                                    onmouseout="this.style.backgroundColor='black'; this.style.color='darkgray'"
-                                    style="color: darkgray; transition: all 0.5s ease;" 
-                                    href="logout_user.php"> 
-                                        Logout 
-                                    </a> 
-                                    --}}
-    
-                                    <form method="post" action="{{ route('auth.logout') }}">
-                                        @csrf {{-- must make a post request form to have this cross site request forgery protection --}}
-                                        <button type="submit" class="btn btn-link dropdown-item"
+                                @if(Auth::check())
+                                    <li>
+                                        <a class="dropdown-item" 
                                         onmouseover="this.style.backgroundColor='white'; this.style.color='black'" 
                                         onmouseout="this.style.backgroundColor='black'; this.style.color='darkgray'"
-                                        style="color: darkgray; transition: all 0.5s ease;"
-                                        >
-                                            Logout
-                                        </button>
-                                    </form>
-                                </li>
-    
-                                <?php
-                                endif;
-                                ?>
-    
+                                        style="color: darkgray; transition: all 0.5s ease;" 
+                                        {{-- href="update_pw.php" --}}
+                                        href="{{ route('profile.index') }}"> 
+                                            Profile
+                                        </a>
+                                    </li>
+                                    <div class="dropdown-divider"></div>
+                                    <li>
+                                        {{--                                 
+                                        <a class="dropdown-item" 
+                                        onmouseover="this.style.backgroundColor='white'; this.style.color='black'" 
+                                        onmouseout="this.style.backgroundColor='black'; this.style.color='darkgray'"
+                                        style="color: darkgray; transition: all 0.5s ease;" 
+                                        href="logout_user.php"> 
+                                            Logout 
+                                        </a> 
+                                        --}}
+                                        <form method="post" action="{{ route('auth.logout') }}">
+                                            @csrf {{-- must make a post request form to have this cross site request forgery protection --}}
+                                            <button type="submit" class="btn btn-link dropdown-item"
+                                            onmouseover="this.style.backgroundColor='white'; this.style.color='black'" 
+                                            onmouseout="this.style.backgroundColor='black'; this.style.color='darkgray'"
+                                            style="color: darkgray; transition: all 0.5s ease;"
+                                            >
+                                                Logout
+                                            </button>
+                                        </form>
+                                    </li>
+                                @else
+                                    <li>
+                                        <a class="dropdown-item" 
+                                        onmouseover="this.style.backgroundColor='white'; this.style.color='black'" 
+                                        onmouseout="this.style.backgroundColor='black'; this.style.color='darkgray'"
+                                        style="color: darkgray; transition: all 0.5s ease;" 
+                                        href="{{ route('registration.index') }}"> 
+                                            Register
+                                        </a>
+                                    </li>
+                                    <div class="dropdown-divider"></div>
+                                    <li>
+                                        <a class="dropdown-item" 
+                                        onmouseover="this.style.backgroundColor='white'; this.style.color='black'" 
+                                        onmouseout="this.style.backgroundColor='black'; this.style.color='darkgray'"
+                                        style="color: darkgray; transition: all 0.5s ease;" 
+                                        href="{{ route('auth.loginForm') }}"> 
+                                            Login 
+                                        </a>
+                                    </li>
+                                @endif
                             </ul>
                         </li>
-    
                     </ul>
+
                 </div>
-    
             </nav>
     
             <!-- NAVIGATION BAR -->
@@ -246,8 +240,8 @@
               <div class="my_main">
                 <section class="et_slide my_pic1" id="tab-welcome"></section>
                 <div class="my_overlay my_caption1">
-                  <h1><strong>LOS ANGELES</strong></h1>
-                  <h5>WELCOME TO THE CITY OF ANGELS!</h5>
+                  <h1><strong>Welcome!</strong></h1>
+                  <h5>Let's find your next meal!</h5>
                 </div>
               </div>
 
@@ -255,7 +249,7 @@
                 <section class="et_slide my_pic2" id="tab-aboutus"></section>
                 <div class="my_overlay my_caption1">
                   <h1><strong>ABOUT US</strong></h1>
-                  <h5>PathPort’s goal is to make sure you and your loved ones have a fabulous time exploring Los Angeles.</h5>
+                  <h5>Our goal is to make sure you relish your next meal!</h5>
                   
                   <a href="/aboutus">
                     <button type="button" class="btn btn-outline-dark"
@@ -284,7 +278,7 @@
                         <div class="modal-body" style="font-size: 12pt">
                           <strong>Created by Arjun Bamba</strong>
                           <br></br>
-                          <strong>Special Thanks to the Coolest Professor Ever: David Tang</strong>
+                          <strong>Special Thanks to the Best Professor Ever: David Tang</strong>
                         </div>
                         <div class="modal-footer">
                           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -302,12 +296,12 @@
                 <div class="my_overlay my_caption1">
                   <h1><strong>ADVENTURE AT HEART</strong></h1>
                   <h5>
-                    At PathPort, we celebrate the spirit of adventure.
+                    At Bon Appe&#769tit, we value health and nutrition above all!
                   </h5>
                   <h5>
-                    What would you like? Browse through our catalogue of recommendations! 
+                    What would you like? Browse through the catalogue of our curated recipes as well as those submitted by users! 
                   </h5>
-                  <a href="/browse">
+                  <a href="/eloquent/recipes">
                     <button type="button" class="btn btn-outline-dark"
                     onmouseover="this.style.backgroundColor='white'; this.style.color='black'" 
                     onmouseout="this.style.backgroundColor='black'; this.style.color='white'"

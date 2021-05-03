@@ -123,21 +123,20 @@ letter-spacing: 0.3rem;
 
 /****** HOME PAGE ******/
 .my_pic1 {
-background-image: url('../img/LA/la_1.jpeg');
+background-image: url('../img/food/pic4.png');
 background-size: cover;
 
 color: white;
 }
 .my_pic2 {
-background-image: url('../img/pic1.jpeg');
+background-image: url('../img/food/pic6.png');
 background-size: cover;
 background-repeat: no-repeat;
 
 color: white;
 }
-
 .my_pic3 {
-background-image: url('../img/pic2.jpeg');
+background-image: url('../img/food/pic2.png');
 background-size: cover;
 
 color: white;

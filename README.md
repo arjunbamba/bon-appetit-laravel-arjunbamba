@@ -1,4 +1,5 @@
-# ITP 405: Final Project
+# Bon Appe&#233;tit!
+##### Final Project for ITP 405
 
 **NAME**: Arjun Bamba
 
@@ -9,6 +10,10 @@
 **PROJECT URL**: 
 
 [VIEW PROJECT]()
+
+## Database Diagram
+![Database Diagram for Bon Appetit!](/public/img/DB_Diagram_Arjun_Bamba.png "Database Diagram for Bon Appetit!")
+Courtesy of dbdiagram.io.
 
 
 ---

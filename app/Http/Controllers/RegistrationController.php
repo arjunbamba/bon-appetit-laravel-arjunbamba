@@ -28,10 +28,10 @@ class RegistrationController extends Controller
 
         // method 2
         // $userRole = Role::where('slug', '=', 'user')->first();
-        $userRole = Role::getUser(); // equivalent refactored way to write above statement; can move some logic to the Role model and call that here; general tip: create custom methods on model to encapsulate something more complex
+        // $userRole = Role::getUser(); // equivalent refactored way to write above statement; can move some logic to the Role model and call that here; general tip: create custom methods on model to encapsulate something more complex
         
         // $user->role_id = $userRole->id; 
-        $user->role()->associate($userRole);
+        // $user->role()->associate($userRole);
         
         $user->save();
 

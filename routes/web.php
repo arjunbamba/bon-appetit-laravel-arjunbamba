@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\RegistrationController;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\EloquentRecipeController;
 
 use Illuminate\Support\Facades\Route;
 
@@ -24,12 +26,37 @@ Route::get('/', function () {
     return view('home');
 })->name('home.index');
 
+Route::get('/aboutus', function() {
+    return view('aboutus');
+})->name('aboutus.index');
+
+Route::get('/register', [RegistrationController::class, 'index'])->name('registration.index');
+Route::post('/register', [RegistrationController::class, 'register'])->name('registration.create');
+
 Route::get('/login', [AuthController::class, 'loginForm'])->name('auth.loginForm'); // LECTURE 03/01/21
 Route::post('/login', [AuthController::class, 'login'])->name('auth.login');    // LECTURE 03/01/21
 Route::post('/logout', [AuthController::class, 'logout'])->name('auth.logout');
 
-Route::get('/register', [RegistrationController::class, 'index'])->name('registration.index');
-Route::post('/register', [RegistrationController::class, 'register'])->name('registration.create');
+Route::get('/profile', [ProfileController::class, 'index'])->name('profile.index'); // Lecture 03/01
+
+// Route::get('/browse', function() {
+//     return view('aboutus');
+// })->name('browse.index');
+
+// Route::get('/createRecipe', function() {
+//     return view('aboutus');
+// })->name('createRecipe.index');
+
+Route::get('/eloquent/recipes/create', [EloquentRecipeController::class, 'create'])->name('eloquent_recipe.create');
+Route::get('/eloquent/recipes/{id}/edit', [EloquentRecipeController::class, 'edit'])->name('eloquent_recipe.edit');
+//ITP 405: Project 5 - ORM w/ Eloquent
+Route::get('/eloquent/recipes', [EloquentRecipeController::class, 'index'])->name('eloquent_recipe.index');
+Route::post('/eloquent/recipes', [EloquentRecipeController::class, 'store'])->name('eloquent_recipe.store');
+Route::post('/eloquent/recipes/{id}', [EloquentRecipeController::class, 'update'])->name('eloquent_recipe.update');
+
+
+Route::delete('/eloquent/recipes/{id}', [EloquentRecipeController::class, 'destroy'])->name('eloquent_recipe.delete');
+
 
 
 if (env('APP_ENV') !== 'local') {
