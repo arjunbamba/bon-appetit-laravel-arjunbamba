@@ -29,7 +29,7 @@
         {{-- src="{{ asset('img/user.png') }}" style="height: 30px;" --}}
         <span class="body">
             <div class="my_main" id="tab-main-vid">
-              <video autoPlay loop muted controls class="main_video">
+              <video autoPlay loop muted class="main_video">
                 <source src="{{ asset('media/food_intro1.mp4') }}" type="video/mp4" />
               </video>
               <div class="my_overlay my_caption1">
