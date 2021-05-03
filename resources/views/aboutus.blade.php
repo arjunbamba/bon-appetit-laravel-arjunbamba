@@ -8,11 +8,11 @@
                     <section class="AboutUsStyle_et_slide AboutUsStyle_my_pic"></section>
                     <div class="AboutUsStyle_my_overlay AboutUsStyle_my_caption1">
                         <h5>
-                            We are a passionate and ambitious group of peers bound by an unbridled spirit of adventure. Despite our urban location, we have seen firsthand how the outdoors offers a unique opportunity for students to come together, regardless of their walk of life or level of skill. Where there is adventure to be had, PathPort is there to share it with our community. Whether you’re a beginner or an old pro, we’d love to have you join us.
+                            The struggle is real; with an endless array of dinner options bouncing around in your head, the mere act of choosing what to eat can feel like an impossible task. Bon Appe&#769tit is here to simplify that process. We have seen firsthand how food is not only important for your health but also a means to connect with different cultures. Bon Appe&#769tit offers a unique opportunity for anyone from a novice to a chef to try out new dishes from a variety of cuisines. Whether you’re a beginner or an professional chef, we’d love to have you join us. Try new recipes! Sign up to add your own recipes and edit current recipes to make them even better!
                         </h5>
 
                         <h5>
-                            Our goal is to get as many people outside as possible. Whether you're an experienced mountaineer or have never set foot outside in the concrete jungle of LA, we've got a recommended place for you to explore! So, feel free to browse through our recommendations and explore the places. Please let us know how they were!
+                            Our goal is to get as many people experience the authentic flavors of cultures around the world. Whether you're an experienced chef or have never set foot in the kitchen, we've got something for you to try and our instructions make it super easy for anyone to follow along! So, feel free to browse through our recipes. Please let us know how they were!
                         </h5>
                     </div>
                 </div>

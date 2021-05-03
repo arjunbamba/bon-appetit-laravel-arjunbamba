@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Bookmark;
 use App\Models\Cuisine;
 use App\Models\Recipe;
 use Illuminate\Http\Request;
@@ -47,7 +48,7 @@ class EloquentRecipeController extends Controller
             'cuisine' => 'required|exists:cuisines,id',
             'name' => 'required|max:75',
             'ingredients' => 'required',
-            'instructions' => 'required|min:30',
+            'instructions' => 'required|min:15',
         ]);
 
         $cuisine = Cuisine::find($request->input('cuisine'));
@@ -78,6 +79,24 @@ class EloquentRecipeController extends Controller
         ]);
     }
 
+    public function bookmark($id) {
+        $bookmark = new Bookmark();
+
+        $user = User::find(Auth::user()->id);
+        $bookmark->user()->associate($user);
+
+        $recipe = Recipe::find($id);
+        $bookmark->recipe()->associate($recipe);
+
+        $bookmark->save();
+        
+        // $this->authorize('update', $recipe);
+
+        return redirect()
+            ->route('eloquent_recipe.index')
+            ->with('success', "Successfully bookmarked the ".$recipe->name." recipe! You can now view it in your profile.");
+    }
+
     public function destroy($id) {
 
         // $result=Recipe::where('id',$id)->delete();
@@ -94,7 +113,7 @@ class EloquentRecipeController extends Controller
             'cuisine' => 'required|exists:cuisines,id',
             'name' => 'required|max:75',
             'ingredients' => 'required',
-            'instructions' => 'required|min:30',
+            'instructions' => 'required|min:15',
         ]);
 
         $cuisine = Cuisine::find($request->input('cuisine'));
@@ -111,5 +130,14 @@ class EloquentRecipeController extends Controller
             // ->route('eloquent_recipe.edit', [ 'id' => $id ])
             ->route('eloquent_recipe.index')
             ->with('success', "Successfully updated the recipe for {$request->input('name')} in our catalogue!");
+    }
+
+
+    public function view($id) {
+        $recipe = Recipe::find($id);
+
+        return view('eloquent_recipe.view', [
+            'recipe' => $recipe,
+        ]);
     }
 }

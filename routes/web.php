@@ -51,9 +51,12 @@ Route::get('/eloquent/recipes/create', [EloquentRecipeController::class, 'create
 Route::get('/eloquent/recipes/{id}/edit', [EloquentRecipeController::class, 'edit'])->name('eloquent_recipe.edit');
 //ITP 405: Project 5 - ORM w/ Eloquent
 Route::get('/eloquent/recipes', [EloquentRecipeController::class, 'index'])->name('eloquent_recipe.index');
+Route::get('/eloquent/recipes/view/{id}', [EloquentRecipeController::class, 'view'])->name('eloquent_recipe.view');
 Route::post('/eloquent/recipes', [EloquentRecipeController::class, 'store'])->name('eloquent_recipe.store');
 Route::post('/eloquent/recipes/{id}', [EloquentRecipeController::class, 'update'])->name('eloquent_recipe.update');
 
+Route::post('/eloquent/recipes/bookmark/{id}', [EloquentRecipeController::class, 'bookmark'])->name('eloquent_recipe.bookmark');
+Route::delete('/eloquent/recipes/bookmark/{id}', [ProfileController::class, 'removeBookmark'])->name('eloquent_recipe.removeBookmark');
 
 Route::delete('/eloquent/recipes/{id}', [EloquentRecipeController::class, 'destroy'])->name('eloquent_recipe.delete');
 

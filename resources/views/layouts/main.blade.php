@@ -30,6 +30,10 @@
         <link rel="stylesheet" type="text/css" href="{{ asset('css/AboutUsStyle.css') }}" />
 
         <style>
+            body{
+            background-color: #1F1F1F;
+            color: white;
+            }
             .body{
                 /*padding: 40px;*/
                 background-color: #121212;  
@@ -37,6 +41,12 @@
 
                 font-family: "Century Gothic", 'Lato', sans-serif;
                 margin: 0; /*  ADDED  */
+            }
+            .content{
+                /* background-color: #121212;   */
+                /* color: white; */
+                text-align: center;
+                font-family: "Century Gothic", 'Lato', sans-serif; 
             }
         </style>
 
@@ -147,7 +157,8 @@
                                         Browse
                                     </a>
                                 </li>
-                                
+
+                                @if(Auth::check())
                                 <li>
                                     <a class="dropdown-item" 
                                     onmouseover="this.style.backgroundColor='white'; this.style.color='black'" 
@@ -158,6 +169,7 @@
                                         Create Recipe
                                     </a>
                                 </li>
+                                @endif
                             </ul>
                         </li>
                     </ul>
@@ -259,7 +271,9 @@
                 </div>
             @endif
 
-            @yield('content')
+            <span class="content">
+                @yield('content')
+            </span>
         </main>
     </body>
 </html>

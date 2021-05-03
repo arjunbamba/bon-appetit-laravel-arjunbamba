@@ -140,6 +140,7 @@
                                     </a>
                                 </li>
                                 
+                                @if(Auth::check())
                                 <li>
                                     <a class="dropdown-item" 
                                     onmouseover="this.style.backgroundColor='white'; this.style.color='black'" 
@@ -150,6 +151,7 @@
                                         Create Recipe
                                     </a>
                                 </li>
+                                @endif
                             </ul>
                         </li>
                     </ul>
