@@ -7,9 +7,9 @@
 
 **USC EMAIL**: arjunbam@usc.edu
 
-**PROJECT URL**: 
+**PROJECT URL**: https://arjunbam-itp405-final-app.herokuapp.com/
 
-[VIEW PROJECT]()
+[VIEW PROJECT](https://arjunbam-itp405-final-app.herokuapp.com/)
 
 ## Database Diagram
 ![Database Diagram for Bon Appetit!](/public/img/DB_Diagram_Arjun_Bamba.png "Database Diagram for Bon Appetit!")
