@@ -7,6 +7,8 @@
 
 **USC EMAIL**: arjunbam@usc.edu
 
+**DEMO**: Available at /public/media/DemoVideo.mp4
+
 **PROJECT URL**: https://arjunbam-itp405-final-app.herokuapp.com/
 
 [VIEW PROJECT](https://arjunbam-itp405-final-app.herokuapp.com/)

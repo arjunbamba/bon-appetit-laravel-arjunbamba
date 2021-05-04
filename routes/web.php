@@ -49,7 +49,7 @@ Route::get('/profile', [ProfileController::class, 'index'])->name('profile.index
 
 Route::get('/eloquent/recipes/create', [EloquentRecipeController::class, 'create'])->name('eloquent_recipe.create');
 Route::get('/eloquent/recipes/{id}/edit', [EloquentRecipeController::class, 'edit'])->name('eloquent_recipe.edit');
-//ITP 405: Project 5 - ORM w/ Eloquent
+
 Route::get('/eloquent/recipes', [EloquentRecipeController::class, 'index'])->name('eloquent_recipe.index');
 Route::get('/eloquent/recipes/view/{id}', [EloquentRecipeController::class, 'view'])->name('eloquent_recipe.view');
 Route::post('/eloquent/recipes', [EloquentRecipeController::class, 'store'])->name('eloquent_recipe.store');
